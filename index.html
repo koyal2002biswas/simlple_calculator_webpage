@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+    background-color: rgb(125, 185, 119);
+}
+.box{
+    margin: auto;
+    margin-top: 100px;
+    border: solid 5px;
+    border-radius: 5%;
+    border-color: aqua;
+    height: 500px;
+    width: 380px;
+    background-color: rgb(13, 22, 13);
+    box-shadow: 10px 10px 10px ;
+}
+#screen{
+    border: solid 2px;
+    margin: 10px;
+    
+    height: 120px;
+    font-size: 1.5em;
+    background-color: black;
+    
+
+}
+#screen_1{
+    border: solid 5px;
+    border-color: aqua;
+    margin: 5px;
+    
+    padding-left: 3px;
+    height: 40px;
+    font-size: 1.3em;
+    background-color: rgb(21, 57, 18);
+    color: antiquewhite;
+
+}
+#screen_2{
+    border: solid 5px;
+    border-color:aqua;
+    margin: 5px;
+   
+    padding-left: 3px;
+    height: 40px;
+    font-size: 1.3em;
+    background-color: rgb(21,57,18);
+    color: antiquewhite;
+    
+
+}
+.input{
+    display: grid;
+    grid-template-columns: 70px 70px 70px 70px;
+    margin:50px;
+    grid-gap: 2px; 
+}
+.keys{
+    height: 50px;
+    width: 70px;
+    border: solid 2px;
+    border-color: antiquewhite;
+    color: rgb(16, 44, 14);
+    background-color: rgb(78, 174, 78);
+    text-align: center;
+    font-size: 2em;
+    
+}
+.keys:last-child{
+    width: 286px;
+    grid-column-start: 1;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="screen">
+            <div id="screen_1"></div>
+            <div id="screen_2"></div>
+        </div>
+        <div class="input">
+            <button class="keys"  onclick="click_1()">1</button>
+            <button class="keys"  onclick="click_2()">2</button>
+            <button class="keys"  onclick="click_3()">3</button>
+            <button class="keys" onclick="click_C()">C</button>
+            <button class="keys"  onclick="click_4()">4</button>
+            <button class="keys"  onclick="click_5()">5</button>
+            <button class="keys"  onclick="click_6()">6</button>
+            <button class="keys" onclick="click_point()">.</button>
+            <button class="keys"  onclick="click_7()">7</button>
+            <button class="keys"  onclick="click_8()">8</button>
+            <button class="keys"  onclick="click_9()">9</button>
+            <button class="keys" onclick="click_0()">0</button>
+            <button class="keys" onclick="click_quot()">/</button>
+            <button class="keys" onclick="click_sum()">+</button>
+            <button class="keys" onclick="click_dif()">-</button>
+            <button class="keys" onclick="click_prod()">*</button>
+            
+            <button class="keys"  onclick="click_equal()">=</button>
+           
+        </div>
+    </div>
+    
+    <script>
+        let prev=document.getElementById('screen_1').innerHTML;
+let temp=document.getElementById('screen_1').innerHTML;
+let prev_2=document.getElementById('screen_2').innerHTML;
+let ans=0;
+let first=0;
+let v=0;
+let sec=0;
+function click_1(){ 
+    if(temp==null){
+    prev=prev+1.0;
+    temp=temp+1.0;
+    }
+    else {
+        temp=temp+"1";
+        prev=prev+"1";
+    }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else if (v!=0){sec=temp;}
+    
+    
+}
+function click_2(){
+    if(temp==null){
+        prev=prev+2.0;
+        temp=temp+2.0;
+        }
+        else {
+            temp=temp+"2";
+            prev=prev+"2";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_3(){ 
+    if(temp==null){
+        prev=prev+3.0;
+        temp=temp+3.0;
+        }
+        else {
+            temp=temp+"3";
+            prev=prev+"3";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_4(){ 
+    if(temp==null){
+        prev=prev+4.0;
+        temp=temp+4.0;
+        }
+        else {
+            temp=temp+"4";
+            prev=prev+"4";
+        }
+   
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_5(){ 
+    if(temp==null){
+        prev=prev+5.0;
+        temp=temp+5.0;
+        }
+        else {
+            temp=temp+"5";
+            prev=prev+"5";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_6(){ 
+    if(temp==null){
+        prev=prev+6.0;
+        temp=temp+6.0;
+        }
+        else {
+            temp=temp+"6";
+            prev=prev+"6";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_7(){ 
+    if(temp==null){
+        prev=prev+7.0;
+        temp=temp+7.0;
+        }
+        else {
+            temp=temp+"7";
+            prev=prev+"7";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_8(){ 
+    if(temp==null){
+        prev=prev+8.0;
+        temp=temp+8.0;
+        }
+        else {
+            temp=temp+"8";
+            prev=prev+"8";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_9(){ 
+    if(temp==null){
+        prev=prev+9;
+        temp=temp+9;
+        }
+        else {
+            temp=temp+"9";
+            prev=prev+"9";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_0(){ 
+    if(temp==null){
+        prev=prev+0;
+        temp=temp+0;
+        }
+        else {
+            temp=temp+"0";
+            prev=prev+"0";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+}
+function click_point(){ 
+    if(temp==null){
+        
+        }
+        else {
+            temp=temp+".";
+            prev=prev+".";
+        }
+    document.getElementById('screen_1').innerHTML=prev;
+    if(v==0){first=temp;}
+    else {sec=temp;}
+    }
+
+
+function click_C(){document.getElementById('screen_1').innerHTML=null;
+ document.getElementById('screen_2').innerHTML=null;
+ v=0;
+ prev=null;
+ temp=null;
+}
+function click_X(){ document.getElementById('screen_1').innerHTML=prev;}
+
+function click_sum(){ 
+    prev=prev+"+";
+    document.getElementById('screen_1').innerHTML=prev;
+    temp=null;
+    v=1;
+}
+function click_dif(){ 
+    prev=prev+"-";
+    document.getElementById('screen_1').innerHTML=prev;
+    temp=null;
+    v=2;
+}
+function click_prod(){ 
+    prev=prev+"*";
+    document.getElementById('screen_1').innerHTML=prev;
+    temp=null;
+    v=3;
+}
+function click_quot(){ 
+    prev=prev+"/" ;
+    document.getElementById('screen_1').innerHTML=prev;
+    temp=null;
+    v=4;
+}
+let prev_3= document.getElementById('screen_2').innerHTML ; 
+function click_equal(){
+    if(document.getElementById('screen_2').innerHTML!=0){
+        first=parseInt(document.getElementById('screen_2').innerHTML);
+    }
+    
+    if(v==1){
+
+        document.getElementById('screen_2').innerHTML=(parseFloat(first)+parseFloat(sec)).toFixed(3);
+    }
+    if(v==2){
+       
+        document.getElementById('screen_2').innerHTML=(parseFloat(first)-parseFloat(sec)).toFixed(3);
+    }
+    if(v==3){
+        document.getElementById('screen_2').innerHTML=(parseFloat(first)*parseFloat(sec)).toFixed(3);
+    }
+    if(v==4){
+        document.getElementById('screen_2').innerHTML=(parseFloat(first)/parseFloat(sec)).toFixed(3);
+    }
+    
+
+}
+    </script>
+</body>
+</html>
